@@ -2,8 +2,11 @@ import React from 'react';
 import { dispatch } from 'redux';
 import { addTodo } from '../actions/todo_actions';
 
-const AddTodo = ( { store } ) => (
-  <div>
+const AddTodo = ( { store } ) => {
+  let input;
+
+  return (
+    <div>
     <input
       ref={node => {
         input = node
@@ -18,6 +21,7 @@ const AddTodo = ( { store } ) => (
         add item
       </button>
   </div>
-);
+  )
+};
 
-export { AddTodo };
+export default { AddTodo };
