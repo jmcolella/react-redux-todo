@@ -7,21 +7,23 @@ const AddTodo = ( { store } ) => {
 
   return (
     <div>
-    <input
-      ref={node => {
-        input = node
-      }}
-      type="text"
-      placeholder="add new To Do item" />
+      <input
+        ref={ ( node ) => {
+          input = node
+        }}
+        type="text"
+        placeholder="add new To Do item" />
 
-    <button
-      onClick={
-        dispatch(addTodo( input.value ))
-      }>
+      <button
+        onClick={() => {
+            store.dispatch(addTodo( input.value ));
+            input.value = '';
+          }
+        }>
         add item
       </button>
-  </div>
+    </div>
   )
 };
 
-export default { AddTodo };
+export default AddTodo;

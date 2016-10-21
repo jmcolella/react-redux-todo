@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Todo } from '../components/Todo';
+import Todo from '../components/Todo';
 
 class TodoList extends Component {
   componentDidMount() {
@@ -30,4 +30,4 @@ class TodoList extends Component {
   }
 };
 
-export { TodoList };
+export default TodoList;

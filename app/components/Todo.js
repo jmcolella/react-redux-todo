@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Todo = ({
-  props
-}) => (
-  <li>{ props.todo.text }</li>
-);
+const Todo = ( { todo } ) => {
+  return (
+    <li>{ todo.text }</li>
+  )
+};
 
-export { Todo };
+export default Todo;
