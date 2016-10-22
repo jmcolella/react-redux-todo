@@ -21,7 +21,8 @@ class TodoList extends Component {
           state.todos.map( ( todo ) => {
             return <Todo
                       key={ todo.id }
-                      todo={ todo } />
+                      todo={ todo }
+                      store={ store } />
           })
         }
         </ul>
