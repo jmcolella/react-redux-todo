@@ -11,14 +11,27 @@ class TodoList extends Component {
   componentWillUnmount() {
     this.unsubscribe();
   }
+  getVisibleTodos ( todos, filter ) {
+    switch ( filter ) {
+      case 'SHOW_ALL':
+        return todos
+      case 'SHOW_COMPLETED':
+        return todos.filter( todo => todo.completed )
+      case 'SHOW_ACTIVE':
+        return todos.filter( todo => !todo.completed )
+      default:
+        return todos
+    }
+  }
   render() {
     const { store } = this.props;
     const state = store.getState();
+    const todos = this.getVisibleTodos( state.todos, state.visibilityFilter );
     return (
       <div>
         <ul>
         {
-          state.todos.map( ( todo ) => {
+          todos.map( ( todo ) => {
             return <Todo
                       key={ todo.id }
                       todo={ todo }
