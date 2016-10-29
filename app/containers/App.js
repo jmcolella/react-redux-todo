@@ -4,16 +4,16 @@ import AddTodo from '../components/AddTodo';
 import TodoList from '../containers/TodoList';
 import Footer from '../components/Footer';
 
-const App = ( { store } ) => {
+const App = () => {
   return (
     <div>
-      <AddTodo store={ store } />
+      <AddTodo />
 
-      <TodoList store={ store } />
+      <TodoList />
 
-      <Footer store={ store } />
+      <Footer />
     </div>
   )
 };
 
-export { App };
+export default App;

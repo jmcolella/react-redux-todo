@@ -1,7 +1,7 @@
 import React from 'react';
 import FilterLinkContainer from '../containers/FilterLinkContainer';
 
-const Footer = ( { store } ) => (
+const Footer = ( props, { store } ) => (
   <div>
     <FilterLinkContainer
       store = { store }
@@ -25,5 +25,9 @@ const Footer = ( { store } ) => (
     </FilterLinkContainer>
   </div>
 );
+
+Footer.contextTypes = {
+  store: React.PropTypes.object
+};
 
 export default Footer;

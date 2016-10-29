@@ -3,7 +3,7 @@ import Todo from '../components/Todo';
 
 class TodoList extends Component {
   componentDidMount() {
-    const { store } = this.props;
+    const { store } = this.context;
     this.unsubscribe = store.subscribe( () =>
       this.forceUpdate()
      )
@@ -24,7 +24,7 @@ class TodoList extends Component {
     }
   }
   render() {
-    const { store } = this.props;
+    const { store } = this.context;
     const state = store.getState();
     const todos = this.getVisibleTodos( state.todos, state.visibilityFilter );
     return (
@@ -42,6 +42,10 @@ class TodoList extends Component {
       </div>
     )
   }
+};
+
+TodoList.contextTypes = {
+  store: React.PropTypes.object
 };
 
 export default TodoList;
