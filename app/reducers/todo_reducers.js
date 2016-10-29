@@ -55,11 +55,8 @@ const todos = ( state = [], action ) => {
     case constants.ADD_TODO:
       return state.concat( todo( undefined, action ) );
     case constants.TOGGLE_TODO:
-      return state.map( t => todo( t, action ) )
     case constants.EDITING_TODO:
-      return state.map( t => todo( t, action ) )
     case constants.CHANGE_TODO:
-      return state.map( t => todo( t, action ) )
     case constants.EDIT_TODO:
       return state.map( t => todo( t, action ) )
     case constants.DELETE_TODO:
