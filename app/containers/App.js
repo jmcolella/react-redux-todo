@@ -15,15 +15,5 @@ const App = ( { store } ) => {
     </div>
   )
 };
-// class App extends Component {
-//   debugger;
-//   render() {
-//     return (
-//       <div>
-//         Hello world!
-//       </div>
-//     )
-//   }
-// };
 
 export { App };

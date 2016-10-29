@@ -1,8 +1,13 @@
 import React from 'react';
 import { dispatch } from 'redux';
-import { editTodo } from '../actions/todo_actions';
+import { changeTodo, editTodo } from '../actions/todo_actions';
 
-const TodoEdit = ( { store, todo, handleChange } ) => {
+const TodoEdit = ({
+  store,
+  todo,
+  handleChange,
+  handleEditTodo
+}) => {
   let input;
 
   return (
@@ -11,12 +16,16 @@ const TodoEdit = ( { store, todo, handleChange } ) => {
         ref={ ( node ) => {
           input = node
         }}
-        onChange={ () => handleChange( input.value ) }
+        onChange={
+          () => store.dispatch( changeTodo( todo, input.value ) )
+        }
         type="text"
         value={ todo.text } />
 
       <button
-        onClick={ () => store.dispatch( editTodo( todo, input.value ) ) }
+        onClick={
+          () => store.dispatch( editTodo( todo, input.value ) )
+        }
       >
         Edit Todo
       </button>
