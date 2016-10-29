@@ -1,55 +1,50 @@
 import React, { Component } from 'react';
 import { dispatch } from 'redux';
-import { changeTodo, editingTodo } from '../actions/todo_actions';
+import { toggleTodo, editingTodo, deleteTodo } from '../actions/todo_actions';
 import TodoEdit from '../components/TodoEdit';
-import StatusButton from '../components/StatusButton';
 
 
-class Todo extends Component {
-  handleChange( input ) {
-    const { todo, store } = this.props;
-    store.dispatch( changeTodo( todo, input ) );
-  }
-  render() {
-    const { todo, store } = this.props;
-    let todoRender;
-    if ( todo.editing ) {
-      todoRender =
-        <TodoEdit
-          handleChange={ this.handleChange.bind(this) }
-          todo={ todo }
-          store={ store } />
-    } else {
-      todoRender =
-        <div>
-          <li
-            onClick={ () => store.dispatch( editingTodo( todo ) )
-            }
-            style={{color: todo.completed ? "green" : "black" }}
-          >
-            { todo.text }
-          </li>
-          <StatusButton
-            todo={ todo }
-            store={ store }
-          >
-            { todo.completed ? "Undo" : "Complete" }
-          </StatusButton>
-          <StatusButton
-              todo={ todo }
-              store={ store }
-              deleteT={ true }
-          >
-            Delete
-          </StatusButton>
-        </div>
-    }
-    return (
+const Todo = ( { store, todo } ) => {
+  let todoRender;
+  if ( todo.editing ) {
+    todoRender =
+      <TodoEdit
+        todo={ todo }
+        store={ store } />
+  } else {
+    todoRender =
       <div>
-        { todoRender }
+        <li
+          onClick={
+            () => store.dispatch( editingTodo( todo ) )
+          }
+          style={{color: todo.completed ? "green" : "black" }}
+        >
+          { todo.text }
+        </li>
+
+        <button
+          onClick={
+            () => store.dispatch( toggleTodo( todo ) )
+          }
+        >
+          { todo.completed ? "Undo" : "Complete" }
+        </button>
+
+        <button
+          onClick={
+            () => store.dispatch( deleteTodo( todo ) )
+          }
+        >
+          Delete
+        </button>
       </div>
-    )
   }
+  return (
+    <div>
+      { todoRender }
+    </div>
+  )
 };
 
 export default Todo;

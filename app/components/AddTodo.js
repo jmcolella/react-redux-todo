@@ -2,7 +2,7 @@ import React from 'react';
 import { dispatch } from 'redux';
 import { addTodo } from '../actions/todo_actions';
 
-const AddTodo = ( { store } ) => {
+const AddTodo = ( props, { store } ) => {
   let input;
 
   return (
@@ -25,6 +25,10 @@ const AddTodo = ( { store } ) => {
       </button>
     </div>
   )
+};
+
+AddTodo.contextTypes = {
+  store: React.PropTypes.object
 };
 
 export default AddTodo;
