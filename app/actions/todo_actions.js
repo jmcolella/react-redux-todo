@@ -1,14 +1,9 @@
-export const ADD_TODO = 'ADD_TODO';
-export const TOGGLE_TODO = 'TOGGLE_TODO';
-export const EDITING_TODO = 'EDITING_TODO';
-export const CHANGE_TODO = 'CHANGE_TODO';
-export const EDIT_TODO = 'EDIT_TODO';
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
+import * as constants from '../constants/todo_constants';
 
 let todoId = 0;
 export function addTodo ( text ) {
   return {
-    type: ADD_TODO,
+    type: constants.ADD_TODO,
     id: todoId++,
     text
   }
@@ -16,21 +11,21 @@ export function addTodo ( text ) {
 
 export function toggleTodo ( todo ) {
   return {
-    type: TOGGLE_TODO,
+    type: constants.TOGGLE_TODO,
     id: todo.id
   }
 }
 
 export function editingTodo ( todo ) {
   return {
-    type: EDITING_TODO,
+    type: constants.EDITING_TODO,
     id: todo.id
   }
 }
 
 export function changeTodo ( todo, input ) {
   return {
-    type: CHANGE_TODO,
+    type: constants.CHANGE_TODO,
     id: todo.id,
     text: input
   }
@@ -38,15 +33,22 @@ export function changeTodo ( todo, input ) {
 
 export function editTodo ( todo, text ) {
   return {
-    type: EDIT_TODO,
+    type: constants.EDIT_TODO,
     id: todo.id,
     text: text
   }
 }
 
+export function deleteTodo ( todo ) {
+  return {
+    type: constants.DELETE_TODO,
+    id: todo.id
+  }
+}
+
 export function setVisibilityFilter ( filter ) {
   return {
-    type: SET_VISIBILITY_FILTER,
+    type: constants.SET_VISIBILITY_FILTER,
     filter: filter
   }
 }

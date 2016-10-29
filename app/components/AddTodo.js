@@ -19,7 +19,8 @@ const AddTodo = ( { store } ) => {
             store.dispatch(addTodo( input.value ));
             input.value = '';
           }
-        }>
+        }
+      >
         add item
       </button>
     </div>

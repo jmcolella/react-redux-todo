@@ -6,18 +6,9 @@ import StatusButton from '../components/StatusButton';
 
 
 class Todo extends Component {
-  componentDidMount() {
-    const { store } = this.props;
-    this.unsubscribe = store.subscribe( () =>
-      this.forceUpdate()
-    )
-  }
   handleChange( input ) {
     const { todo, store } = this.props;
     store.dispatch( changeTodo( todo, input ) );
-  }
-  componentWillUnmount() {
-    this.unsubscribe;
   }
   render() {
     const { todo, store } = this.props;
@@ -40,7 +31,17 @@ class Todo extends Component {
           </li>
           <StatusButton
             todo={ todo }
-            store={ store } />
+            store={ store }
+          >
+            { todo.completed ? "Undo" : "Complete" }
+          </StatusButton>
+          <StatusButton
+              todo={ todo }
+              store={ store }
+              deleteT={ true }
+          >
+            Delete
+          </StatusButton>
         </div>
     }
     return (

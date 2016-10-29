@@ -1,18 +1,18 @@
 import React from 'react';
 import { dispatch } from 'redux';
-import { toggleTodo } from '../actions/todo_actions';
+import { toggleTodo, deleteTodo } from '../actions/todo_actions';
 
-const StatusButton = ( { store, todo } ) => {
+const StatusButton = ( { store, todo, deleteT, children } ) => {
   let statusButton;
 
-  if ( todo.completed ) {
+  if ( deleteT ) {
     statusButton =
       <button
         onClick={
-          () => store.dispatch( toggleTodo( todo ) )
+          () => store.dispatch( deleteTodo( todo ) )
         }
       >
-        Undo
+        { children }
       </button>
   } else {
     statusButton =
@@ -21,7 +21,7 @@ const StatusButton = ( { store, todo } ) => {
           () => store.dispatch( toggleTodo( todo ) )
         }
       >
-        Complete
+        { children }
       </button>
   }
   return (
