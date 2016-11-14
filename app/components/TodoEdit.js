@@ -1,6 +1,7 @@
 import React from 'react';
 import { dispatch } from 'redux';
 import { changeTodo, editTodo } from '../actions/todo_actions';
+import '../assets/stylesheets/app.scss';
 
 const TodoEdit = ({
   store,
@@ -11,7 +12,7 @@ const TodoEdit = ({
   let input;
 
   return (
-    <div>
+    <div className="edit-todo-container">
       <input
         ref={ ( node ) => {
           input = node
