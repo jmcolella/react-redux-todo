@@ -69,8 +69,10 @@ $highlight-color: #ED6A5A;
 .navigation-container {
   display: block;
   width: 50%;
+  border-bottom: 1px solid $secondary-color;
   margin: 0 auto;
-  padding: 0px 50px 50px 50px;
+  margin-bottom: 25px;
+  padding: 0px 50px 25px 50px;
 }
 
 .inidividual-filter-link {
@@ -108,8 +110,8 @@ $highlight-color: #ED6A5A;
 
 .individual-todo-container {
   display: block;
-  width: 40%;
   margin: 0 auto;
+  margin-bottom: 20px;
   height: 30px;
 }
 
@@ -120,13 +122,30 @@ $highlight-color: #ED6A5A;
   font-size: 20px;
 }
 
-.individual-todo-container button {
+.todo-options {
   float: right;
   display: inline-block;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 40px;
+}
+
+.todo-options:focus {
+  outline: none;
+}
+
+.todo-toggle {
+  color: $primary-color;
+}
+
+.todo-delete {
+  color: $highlight-color;
 }
 
 .todo-complete {
   color: $highlight-color;
+  text-decoration: line-through;
 }
 
 .todo-incomplete {
@@ -141,6 +160,7 @@ $highlight-color: #ED6A5A;
 .edit-todo-container input {
   float: left;
   height: 30px;
+  width: 30%;
   font-family: $font;
   color: $secondary-color;
 }
