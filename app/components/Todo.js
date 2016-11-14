@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { dispatch } from 'redux';
 import { toggleTodo, editingTodo, deleteTodo } from '../actions/todo_actions';
 import TodoEdit from '../components/TodoEdit';
+import '../assets/stylesheets/app.scss';
 
 
 const Todo = ( { store, todo } ) => {
@@ -18,7 +19,7 @@ const Todo = ( { store, todo } ) => {
           onClick={
             () => store.dispatch( editingTodo( todo ) )
           }
-          style={{color: todo.completed ? "green" : "black" }}
+          className={ ( todo.completed ? "todo-complete" : "todo-incomplete" ) + " individual-todo"}
         >
           { todo.text }
         </li>
@@ -27,21 +28,23 @@ const Todo = ( { store, todo } ) => {
           onClick={
             () => store.dispatch( toggleTodo( todo ) )
           }
+          className="todo-options todo-toggle"
         >
-          { todo.completed ? "Undo" : "Complete" }
+          { todo.completed ? <i className="fa fa-2x fa-undo" aria-hidden="true"></i> : <i className="fa fa-2x fa-check" aria-hidden="true"></i> }
         </button>
 
         <button
           onClick={
             () => store.dispatch( deleteTodo( todo ) )
           }
+          className="todo-options todo-delete"
         >
-          Delete
+          <i className="fa fa-2x fa-trash-o" aria-hidden="true"></i>
         </button>
       </div>
   }
   return (
-    <div>
+    <div className="individual-todo-container">
       { todoRender }
     </div>
   )

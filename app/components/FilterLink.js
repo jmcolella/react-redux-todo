@@ -7,17 +7,23 @@ const FilterLink = (
   }
 ) => {
   if ( active ) {
-    return <span>{ children }</span>
+    return (
+      <div className="inidividual-filter-link">
+        <span className="active-link">{ children }</span>
+      </div>
+    )
   }
   return (
-    <a href="#"
-       onClick={ e => {
-         e.preventDefault();
-         filterClick();
-       }}
-    >
-      {children}
-    </a>
+    <div className="inidividual-filter-link">
+      <a href="#"
+         onClick={ e => {
+           e.preventDefault();
+           filterClick();
+         }}
+      >
+        {children}
+      </a>
+    </div>
   )
 }
 

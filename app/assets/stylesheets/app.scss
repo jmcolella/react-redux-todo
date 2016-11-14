@@ -1,0 +1,185 @@
+/* Font variables */
+$font: 'Raleway', sans-serif;
+
+/* Color variables */
+$primary-color: #36C9C6;
+$secondary-color: #9BC1BC;
+$highlight-color: #ED6A5A;
+
+
+/* Styles */
+
+.container {
+  display: block;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.app-container {
+  text-align: center;
+  font-family: $font;
+}
+
+.app-header {
+  display: block;
+  margin-top: 20px;
+  color: $primary-color;
+}
+
+/* Add Todo Styles */
+
+.add-todo-container {
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 30px;
+}
+
+.add-todo-container input {
+  display: block;
+  padding: 10px;
+  margin: 30 auto;
+  width: 40%;
+  color: $primary-color;
+}
+
+.add-todo-container button {
+  display: block;
+  padding: 10px;
+  width: 40%;
+  margin: 0 auto;
+  font-family: $font;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
+  color: white;
+  background: $primary-color;
+  transition: background 0.5s ease;
+}
+
+.add-todo-container button:hover {
+  background: white;
+  color: $primary-color;
+}
+
+/* Navigation Styles */
+
+.navigation-container {
+  display: block;
+  width: 50%;
+  border-bottom: 1px solid $secondary-color;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  padding: 0px 50px 25px 50px;
+}
+
+.inidividual-filter-link {
+  display: inline-block;
+  margin: 0px 30px 0px 30px;
+}
+
+.active-link {
+  color: $highlight-color;
+}
+
+.inidividual-filter-link a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+.inidividual-filter-link a:hover {
+  color: $highlight-color;
+}
+
+/* Todo List Styles */
+
+.todo-list-container {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.todo-list {
+  list-style: none;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.individual-todo-container {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+.individual-todo {
+  display: inline-block;
+  float: left;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.todo-options {
+  float: right;
+  display: inline-block;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 40px;
+}
+
+.todo-options:focus {
+  outline: none;
+}
+
+.todo-toggle {
+  color: $primary-color;
+}
+
+.todo-delete {
+  color: $highlight-color;
+}
+
+.todo-complete {
+  color: $highlight-color;
+  text-decoration: line-through;
+}
+
+.todo-incomplete {
+  color: $secondary-color;
+}
+
+.edit-todo-container {
+  display: block;
+  width: 100%
+}
+
+.edit-todo-container input {
+  float: left;
+  height: 30px;
+  width: 30%;
+  font-family: $font;
+  color: $secondary-color;
+}
+
+.edit-todo-container button {
+  font-family: $font;
+  float: right;
+  background: $primary-color;
+  color: white;
+  transition: background 0.5s ease;
+  border: none;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  height: 30px;
+  padding: 0px 20px;
+  letter-spacing: .5px;
+}
+
+.edit-todo-container button:hover {
+  background: white;
+  color: $primary-color;
+}

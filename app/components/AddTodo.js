@@ -1,12 +1,13 @@
 import React from 'react';
 import { dispatch } from 'redux';
 import { addTodo } from '../actions/todo_actions';
+import '../assets/stylesheets/app.scss';
 
 const AddTodo = ( props, { store } ) => {
   let input;
 
   return (
-    <div>
+    <div className="add-todo-container">
       <input
         ref={ ( node ) => {
           input = node
@@ -21,7 +22,7 @@ const AddTodo = ( props, { store } ) => {
           }
         }
       >
-        add item
+        Add Item
       </button>
     </div>
   )

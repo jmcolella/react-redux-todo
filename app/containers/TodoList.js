@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Todo from '../components/Todo';
+import '../assets/stylesheets/app.scss';
 
 class TodoList extends Component {
   componentDidMount() {
@@ -28,8 +29,8 @@ class TodoList extends Component {
     const state = store.getState();
     const todos = this.getVisibleTodos( state.todos, state.visibilityFilter );
     return (
-      <div>
-        <ul>
+      <div className="todo-list-container">
+        <ul className="todo-list">
         {
           todos.map( ( todo ) => {
             return <Todo
