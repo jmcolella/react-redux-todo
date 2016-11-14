@@ -1,17 +1,21 @@
 import React from 'react';
+import Header from '../components/Header';
 import AddTodo from '../components/AddTodo';
 import TodoList from '../containers/TodoList';
-import Footer from '../components/Footer';
-import styles from './application.css';
+import Navigation from '../components/Navigation';
+import '../assets/stylesheets/app.scss';
 
 const App = () => {
   return (
-    <div className="app-container">
+    <div className="container app-container">
+      <Header
+        title={ "To Do List" } />
+
       <AddTodo />
 
-      <TodoList />
+      <Navigation />
 
-      <Footer />
+      <TodoList />
     </div>
   )
 };
