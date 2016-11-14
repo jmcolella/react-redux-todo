@@ -1,8 +1,8 @@
 import React from 'react';
 import FilterLinkContainer from '../containers/FilterLinkContainer';
 
-const Footer = ( props, { store } ) => (
-  <div>
+const Navigation = ( props, { store } ) => (
+  <div className="navigation-container">
     <FilterLinkContainer
       store = { store }
       filter = { "SHOW_ALL" }
@@ -26,8 +26,8 @@ const Footer = ( props, { store } ) => (
   </div>
 );
 
-Footer.contextTypes = {
+Navigation.contextTypes = {
   store: React.PropTypes.object
 };
 
-export default Footer;
+export default Navigation;
