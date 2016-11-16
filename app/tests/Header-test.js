@@ -15,7 +15,6 @@ describe ( 'Header component', () => {
   });
 
   it ( 'has props `title`', () => {
-    debugger;
     expect( header.props().title ).to.exist;
   });
 
