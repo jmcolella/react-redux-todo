@@ -5,9 +5,7 @@ import '../assets/stylesheets/app.scss';
 
 const TodoEdit = ({
   store,
-  todo,
-  handleChange,
-  handleEditTodo
+  todo
 }) => {
   let input;
 
