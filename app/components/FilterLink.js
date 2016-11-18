@@ -8,13 +8,13 @@ const FilterLink = (
 ) => {
   if ( active ) {
     return (
-      <div className="inidividual-filter-link">
+      <div className="individual-filter-link">
         <span className="active-link">{ children }</span>
       </div>
     )
   }
   return (
-    <div className="inidividual-filter-link">
+    <div className="individual-filter-link">
       <a href="#"
          onClick={ e => {
            e.preventDefault();
