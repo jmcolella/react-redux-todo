@@ -2,9 +2,9 @@ import React from 'react';
 import { createStore } from 'redux';
 import { mount } from 'enzyme';
 import { expect } from 'chai';
-import { todoApp } from '../reducers/todo_reducers';
-import FilterLinkContainer from '../containers/FilterLinkContainer';
-import FilterLink from '../components/FilterLink';
+import { todoApp } from '../../app/reducers/todo_reducers';
+import FilterLinkContainer from '../../app/containers/FilterLinkContainer';
+import FilterLink from '../../app/components/FilterLink';
 
 describe ( 'Filter Link Container', () => {
   let filterLink, store;
@@ -21,5 +21,5 @@ describe ( 'Filter Link Container', () => {
   it ( 'renders FilterLink component', () => {
     expect( filterLink.find( FilterLink ) ).to.have.length( 1 );
   });
-  
+
 });

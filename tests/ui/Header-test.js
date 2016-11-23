@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { expect } from 'chai';
-import Header from '../components/Header';
+import Header from '../../app/components/Header';
 
 describe ( 'Header component', () => {
   let header;

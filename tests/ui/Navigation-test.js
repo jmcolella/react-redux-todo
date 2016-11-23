@@ -2,9 +2,9 @@ import React from 'react';
 import { createStore } from 'redux';
 import { mount } from 'enzyme';
 import { expect } from 'chai';
-import { todoApp } from '../reducers/todo_reducers';
-import Navigation from '../components/Navigation';
-import FilterLinkContainer from '../containers/FilterLinkContainer';
+import { todoApp } from '../../app/reducers/todo_reducers';
+import Navigation from '../../app/components/Navigation';
+import FilterLinkContainer from '../../app/containers/FilterLinkContainer';
 
 describe ( 'Navigation component', () => {
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { expect } from 'chai';
-import FilterLink from '../components/FilterLink';
+import FilterLink from '../../app/components/FilterLink';
 
 describe ( 'Filter Link component', () => {
 
@@ -33,5 +33,5 @@ describe ( 'Filter Link component', () => {
     filterLink.setProps( { active: true, children: "All" } );
     expect( filterLink.find( 'span' ).text() ).to.equal( filterLink.props().children );
   });
-    
+
 });

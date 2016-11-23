@@ -1,11 +1,11 @@
 import React from 'react';
 import { createStore, dispatch } from 'redux';
-import { todoApp } from '../reducers/todo_reducers';
-import { addTodo } from '../actions/todo_actions';
+import { todoApp } from '../../app/reducers/todo_reducers';
+import { addTodo } from '../../app/actions/todo_actions';
 import { shallow, mount } from 'enzyme';
 import { expect } from 'chai';
-import TodoList from '../containers/TodoList';
-import Todo from '../components/Todo';
+import TodoList from '../../app/containers/TodoList';
+import Todo from '../../app/components/Todo';
 
 describe ( 'TodoList Container', () => {
   let todoList, store;

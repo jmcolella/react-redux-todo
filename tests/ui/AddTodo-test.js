@@ -2,8 +2,8 @@ import React from 'react';
 import { createStore, dispatch } from 'redux';
 import { mount } from 'enzyme';
 import { expect } from 'chai';
-import { todoApp } from '../reducers/todo_reducers';
-import AddTodo from '../components/AddTodo';
+import { todoApp } from '../../app/reducers/todo_reducers';
+import AddTodo from '../../app/components/AddTodo';
 
 describe ( 'Add Todo component', () =>{
   let addTodo, store;

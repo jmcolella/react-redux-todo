@@ -2,10 +2,10 @@ import React from 'react';
 import { createStore, dispatch } from 'redux';
 import { mount } from 'enzyme';
 import { expect } from 'chai';
-import { todoApp } from '../reducers/todo_reducers';
-import { addTodo } from '../actions/todo_actions';
-import Todo from '../components/Todo';
-import TodoEdit from '../components/TodoEdit';
+import { todoApp } from '../../app/reducers/todo_reducers';
+import { addTodo } from '../../app/actions/todo_actions';
+import Todo from '../../app/components/Todo';
+import TodoEdit from '../../app/components/TodoEdit';
 
 describe ( 'Todo component', () => {
 

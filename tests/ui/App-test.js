@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import { expect } from 'chai';
-import App from '../containers/App';
-import Header from '../components/Header';
-import AddTodo from '../components/AddTodo';
-import Navigation from '../components/Navigation';
-import TodoList from '../containers/TodoList';
+import App from '../../app/containers/App';
+import Header from '../../app/components/Header';
+import AddTodo from '../../app/components/AddTodo';
+import Navigation from '../../app/components/Navigation';
+import TodoList from '../../app/containers/TodoList';
 
 describe ( 'App container', () => {
   it ( 'should render div with class `app-container`', () => {
