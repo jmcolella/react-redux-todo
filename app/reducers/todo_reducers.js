@@ -1,66 +1,18 @@
 import { combineReducers } from 'redux';
 import * as constants from '../constants/todo_constants';
-
-export const todo = ( state, action ) => {
-  switch ( action.type ) {
-    case constants.ADD_TODO:
-      return {
-        id: action.id,
-        text: action.text,
-        editing: false,
-        completed: false
-      }
-    case constants.TOGGLE_TODO:
-      if ( state.id !== action.id ) {
-        return state
-      }
-
-      return Object.assign({}, state, {
-        completed: !state.completed
-      })
-    case constants.EDITING_TODO:
-      if ( state.id !== action.id ) {
-        return state
-      }
-
-      return Object.assign({}, state, {
-        editing: true
-      })
-    case constants.CHANGE_TODO:
-      if ( state.id !== action.id ) {
-        return state
-      }
-
-      return Object.assign({}, state, {
-        text: action.text
-      })
-    case constants.EDIT_TODO:
-      if ( state.id !== action.id ) {
-        return state
-      }
-
-      return Object.assign({}, state, {
-        editing: false,
-        text: action.text
-      })
-    case constants.DELETE_TODO:
-      return state.id !== action.id
-    default:
-      return state
-  }
-}
+import * as Helpers from '../utils/todo_helpers';
 
 export const todos = ( state = [], action ) => {
   switch ( action.type ) {
     case constants.ADD_TODO:
-      return state.concat( todo( undefined, action ) );
+      return state.concat( Helpers.todo( undefined, action ) );
     case constants.TOGGLE_TODO:
     case constants.EDITING_TODO:
     case constants.CHANGE_TODO:
     case constants.EDIT_TODO:
-      return state.map( t => todo( t, action ) )
+      return state.map( t => Helpers.todo( t, action ) )
     case constants.DELETE_TODO:
-      return state.filter( t => todo( t, action ) )
+      return state.filter( t => Helpers.todo( t, action ) )
     default:
       return state
   }
