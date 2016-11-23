@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "test-karma": "karma start",
-    "test-jest": "jest"
+    "test-jest": "jest --verbose"
   },
   "author": "John Colella",
   "license": "ISC",
