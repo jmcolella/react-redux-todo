@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import * as constants from '../constants/todo_constants';
 
-const todo = ( state, action ) => {
+export const todo = ( state, action ) => {
   switch ( action.type ) {
     case constants.ADD_TODO:
       return {
@@ -50,7 +50,7 @@ const todo = ( state, action ) => {
   }
 }
 
-const todos = ( state = [], action ) => {
+export const todos = ( state = [], action ) => {
   switch ( action.type ) {
     case constants.ADD_TODO:
       return state.concat( todo( undefined, action ) );
@@ -66,7 +66,7 @@ const todos = ( state = [], action ) => {
   }
 }
 
-const visibilityFilter = ( state = "SHOW_ALL", action ) => {
+export const visibilityFilter = ( state = "SHOW_ALL", action ) => {
   switch ( action.type ) {
     case constants.SET_VISIBILITY_FILTER:
       return action.filter
